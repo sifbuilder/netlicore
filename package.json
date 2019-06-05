@@ -1,0 +1,153 @@
+{
+  "name": "netlicore",
+  "version": "0.0.1",
+  "description": "sif generated themed ent",
+  "author": "sifbuilder",
+  "keywords": [
+    "eons",
+    "gatsby",
+    "netlify"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": true,
+  "workspaces": [
+    "starter",
+    "packages/*"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "lint": "eslint . --config=eslintrc.json"
+  },
+  "devDependencies": {
+    "gatsby": "^2.7.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "eslint": ">=5.0.0",
+    "eslint-plugin-import": ">=2.13.0",
+    "eslint-plugin-node": ">=7.0.0",
+    "eslint-plugin-promise": ">=4.0.0",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eolint": "*"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "latest",
+    "@mdx-js/react": "latest",
+    "gatsby": "^2.7.1",
+    "gatsby-mdx": "latest",
+    "gatsby-theme-netlicore": "*",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "_files": [
+    {
+      "resolve": "LICENSE",
+      "properties": {
+        "content": "The MIT License (MIT)\n\n        Copyright (c) 2019 sifbuilder\n\n        https://opensource.org/licenses/MIT\n        "
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/package.json",
+      "properties": {
+        "name": "gatsby-theme-netlicore",
+        "main": "index.js",
+        "devDependencies": {
+          "gatsby": "^2.7.1",
+          "react": "^16.8.6",
+          "react-dom": "^16.8.6"
+        },
+        "peerDependencies": {
+          "gatsby": "^2.7.1",
+          "react": "^16.8.6",
+          "react-dom": "^16.8.6"
+        }
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/index.js",
+      "properties": {
+        "content": ""
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/src/pages/index.mdx",
+      "properties": {
+        "content": "# hello from the theme world !"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/src/pages/about.mdx",
+      "properties": {
+        "content": "# this is a theme page about sif"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/gatsby-config.js",
+      "properties": {
+        "content": "module.exports = {\nplugins: [\n  {\n    resolve: 'gatsby-mdx',\n  },\n  {\n    resolve: 'gatsby-plugin-page-creator',\n    options: {\n      path: `${__dirname}/src/pages`,\n    }\n  }\n]\n}"
+      }
+    },
+    {
+      "resolve": "starter/package.json",
+      "properties": {
+        "name": "starter",
+        "scripts": {
+          "develop": "gatsby develop",
+          "build": "gatsby build"
+        },
+        "dependencies": {
+          "gatsby": "latest",
+          "react": "latest",
+          "react-dom": "latest",
+          "gatsby-theme-netlicore": "*"
+        }
+      }
+    },
+    {
+      "resolve": "starter/gatsby-config.js",
+      "properties": {
+        "content": "module.exports = {\n__experimentalThemes: [\n  \"gatsby-theme-netlicore\"\n],\n}"
+      }
+    },
+    {
+      "resolve": "starter/src/pages/index.mdx",
+      "properties": {
+        "content": "# hello from the starter world"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/gatsby-config.js",
+      "properties": {
+        "content": "module.exports = {\nplugins: [\n  {\n    resolve: 'gatsby-mdx',\n    options: {\n      defaultLayouts: {\n        default: require.resolve(\"./src/components/layout.js\")\n      }\n    }\n  },\n  {\n    resolve: 'gatsby-plugin-page-creator',\n    options: {\n      path: `${__dirname}/src/pages`,\n    }\n  }\n]\n}"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/src/components/layout.js",
+      "properties": {
+        "content": "import React from 'react'\n\nexport default ({ children }) => (\n  <section\n    style={{\n      display: 'block',\n      maxWidth: '90%',\n      width: '650px',\n      margin: '2rem auto'\n      }}\n  >\n    {children}\n  </section>\n)\n"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/src/components/box.js",
+      "properties": {
+        "content": "import React from 'react'\n\nexport default ({ children }) => (\n  <div\n    style={{\n      padding: '1rem',\n      backgroundColor: 'tomato',\n      }}\n  >\n    {children}\n  </div>\n)\n"
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/src/pages/index.mdx",
+      "properties": {
+        "content": "import Box from '../components/box.js';\n\n# hello from the theme world\n\n<Box>This is smart text in a\n      pretty box</Box>\n\nbye from sif\n          "
+      }
+    },
+    {
+      "resolve": "packages/gatsby-theme-netlicore/index.js",
+      "properties": {
+        "content": "export {default as Box} from './src/components/box'\n"
+      }
+    }
+  ],
+  "main": "index.js",
+  "license": "MIT"
+}
